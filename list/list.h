@@ -141,9 +141,12 @@ int list_pop(List *list, Node *node) {
 
     node->prev->next = node->next;
 
-    free(list);
+    free(node);
 
     list->size--;
+
+    check_list(list);
+    info(list, "end pop index");
 
     return 0;
 }
@@ -165,7 +168,7 @@ Node * list_push(List *list, Node *node, Type_t a) {
     list->size++;
 
     check_list(list);
-    info(list, "end pop index");
+    info(list, "end push index");
 
     return new_node;
 }
