@@ -1,6 +1,5 @@
-//please define POISON and FREE (not equal)
+//please define POISON
 const int POISON = 2281337;
-const int FREE   = 228228228;
 typedef int Type_t;
 #define LOG
 #include "list/list.h"
