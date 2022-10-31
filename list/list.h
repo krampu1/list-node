@@ -267,11 +267,7 @@ void dump(List *list) {
         Node *node = list->zero_element;
         for (size_t i = 0; i <= list->size; i++) {
             if (node != nullptr) {
-                if (node->data == FREE) {
-                    fprintf(file, "VERTEX%zu[label=\"%zu | free | l = %zu | r = %zu\", shape=\"Mrecord\", style = filled, fillcolor = \"#c0ffee\"]\n",\
-                                        node,          node,        node->prev, node->next);
-                }
-                else if (node->data == POISON) {
+                if (node->data == POISON) {
                     fprintf(file, "VERTEX%zu[label=\"%zu | poison | l = %zu | r = %zu\", shape=\"Mrecord\"]\n",\
                                         node,          node,        node->prev, node->next);
                 }
